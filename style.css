@@ -5,7 +5,8 @@ body, html {
   
   .bgimg {
     /* Background image */
-    background-image: url('https://cdn.pixabay.com/photo/2023/02/04/16/07/motorcycle-7767517_1280.jpg');
+    background-image: url('foto.jpg');
+    /* background-image: url('https://cdn.pixabay.com/photo/2023/02/04/16/07/motorcycle-7767517_1280.jpg'); */
     /* Full-screen */
     height: 100%;
     /* Center the background image */
