@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Koarl - Fotos</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe-lightbox.esm.min.js" integrity="sha512-9N+ISkhv3RqsqxoeGRRoJaB2UONm++NDaOwRqFgQZTB2XDD+vzS5mpLDbUgPaTqiyvpwwrtx6pY72J/mTifhcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe.min.css" integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -52,15 +52,7 @@
         </div>
       </div>
 
-      <script type="module">
-        import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe-lightbox.esm.min.js';
-        const lightbox = new PhotoSwipeLightbox({
-          gallery: '#gallery--getting-started',
-          children: 'a',
-          pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe.esm.min.js')
-        });
-        lightbox.init();
-    </script>
+      <script src="./src/gallery.js" type="module"></script>
 
 </body>
 </html>
