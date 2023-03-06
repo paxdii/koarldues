@@ -30,8 +30,7 @@ function generateGallery() {
 
     const colElement = document.createElement("div");
     colElement.appendChild(aElement);
-    colElement.classList.add("col-1");
-
+    colElement.classList.add("col-2");
 
     gallery.appendChild(colElement);
   }
