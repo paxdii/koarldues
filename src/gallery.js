@@ -16,9 +16,10 @@ function generateGallery() {
   for (const image of images) {
     const aElement = document.createElement("a");
     aElement.href = image.url;
-    aElement.setAttribute("data-pswp-width", image.width);
-    aElement.setAttribute("data-pswp-height", image.height);
+    aElement.setAttribute("data-pswp-width", 1669);
+    aElement.setAttribute("data-pswp-height", 2500);
     aElement.target = "_blank";
+
 
     const imgElement = document.createElement("img");
     imgElement.src = image.url;
@@ -28,8 +29,9 @@ function generateGallery() {
     aElement.appendChild(imgElement);
 
     const colElement = document.createElement("div");
-    colElement.classList.add("col-2");
     colElement.appendChild(aElement);
+    colElement.classList.add("col-1");
+
 
     gallery.appendChild(colElement);
   }
