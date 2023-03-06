@@ -25,6 +25,7 @@ function generateGallery() {
     imgElement.src = image.url;
     imgElement.alt = image.caption;
     imgElement.classList.add("img-fluid");
+    imgElement.classList.add("img-style");
 
     aElement.appendChild(imgElement);
 
