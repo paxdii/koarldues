@@ -9,51 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe.min.css" integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-<body>
+
+<body >
   <div class="container mt-5">
 
+
     <div class="pswp-gallery pswp-gallery--single-column row" id="gallery--getting-started">
+      <div id="gallery" onload="generateGallery()"></div>
 
-      <div class="col-2">
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
+      <!-- <div class="col-2">
+        <a href="images/pic1.jpg" 
           data-pswp-width="1669" 
           data-pswp-height="2500" 
           target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+          <img src="images/pic1.jpg" alt="" class="img-fluid"/>
         </a>
-      </div>
-
-      <div class="col-2">
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-          data-pswp-width="1669" 
-          data-pswp-height="2500" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
-        </a>
-      </div>
-
-      <div class="col-2">
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-          data-pswp-width="1669" 
-          data-pswp-height="2500" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
-        </a>
-      </div>
-
-      <div class="col-2">
-        <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg" 
-          data-pswp-width="1669" 
-          data-pswp-height="2500" 
-          target="_blank">
-          <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
-        </a>
-      </div>
+      </div> -->
 
 
+    
     </div>
 
       <script src="./src/gallery.js" type="module"></script>
+      <script src="./src/photos.js" type="module" ></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+      
 </body>
 </html>
