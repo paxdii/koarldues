@@ -1,13 +1,16 @@
-import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe-lightbox.esm.min.js';
 import images from './photos.js';
+import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe-lightbox.esm.min.js';
 
-const lightbox = new PhotoSwipeLightbox({
-  gallery: '#gallery--getting-started',
+const options = {
+  gallery: '#gallery--responsive-images',
   children: 'a',
   pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.6/photoswipe.esm.min.js')
-});
-lightbox.init();
+  
+};
+const lightbox = new PhotoSwipeLightbox(options);
 
+
+lightbox.init();
 
 
 function generateGallery() {
@@ -16,8 +19,9 @@ function generateGallery() {
   for (const image of images) {
     const aElement = document.createElement("a");
     aElement.href = image.url;
-    aElement.setAttribute("data-pswp-width", 1669);
-    aElement.setAttribute("data-pswp-height", 2500);
+    aElement.setAttribute("data-pswp-width", 1000);
+    aElement.setAttribute("data-pswp-height", 1000);
+    aElement.setAttribute("data-cropped", true);
     aElement.target = "_blank";
 
 
@@ -31,7 +35,8 @@ function generateGallery() {
 
     const colElement = document.createElement("div");
     colElement.appendChild(aElement);
-    colElement.classList.add("col-2");
+    colElement.classList.add("col-6");
+    colElement.classList.add("col-md-3");
 
     gallery.appendChild(colElement);
   }
