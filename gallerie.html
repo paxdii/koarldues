@@ -14,27 +14,15 @@
     <meta property="og:title" content="Koarl Chatbot - Ihr digitaler Begleiter">
     <meta property="og:description" content="Erleben Sie die einzigartige Persönlichkeit von Koarl in unserem innovativen Koarl Chatbot.">
     <meta property="og:image" content="assets/images/favicon.png">
-    <meta property="og:url" content="https://koarldüs.com">
+    <meta property="og:url" content="https://koarldüs.com/gallerie">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-        
-    <!--====== Magnific Popup CSS ======-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        
-    <!--====== Slick CSS ======-->
-    <link rel="stylesheet" href="assets/css/slick.css">
-        
-    <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png"> 
         
     <!--====== Bootstrap CSS ======-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    
-    <!--====== Default CSS ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
     
     <!--====== Style CSS ======-->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -42,26 +30,6 @@
 </head>
 
 <body >
-    <!--====== PRELOADER PART START ======-->
-
-    <div class="preloader">
-      <div class="loader">
-          <div class="ytp-spinner">
-              <div class="ytp-spinner-container">
-                  <div class="ytp-spinner-rotator">
-                      <div class="ytp-spinner-left">
-                          <div class="ytp-spinner-circle"></div>
-                      </div>
-                      <div class="ytp-spinner-right">
-                          <div class="ytp-spinner-circle"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-
-  <!--====== PRELOADER PART ENDS ======-->
   
   <!--====== NAVBAR TWO PART START ======-->
 
@@ -71,7 +39,7 @@
               <div class="col-lg-12">
                   <nav class="navbar navbar-expand-lg">
                      
-                      <a class="navbar-brand" href="#">
+                      <a class="navbar-brand" href="index.html">
                           <h3>Koarldüs</h3>
                       </a>
                       
@@ -83,9 +51,9 @@
 
                       <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
                           <ul class="navbar-nav m-auto">
-                              <li class="nav-item"><a class="page-scroll" href="index.html">Home</a></li>
-                              <li class="nav-item active"><a class="page-scroll" href="gallerie.html">Gallerie</a></li>
-                              <li class="nav-item"><a class="page-scroll" href="https://koarl.zapier.app">ChatBot</a></li>
+                              <li class="nav-item"><a class="page-scroll" href="index.html" style="color: black;">Home</a></li>
+                              <li class="nav-item active"><a class="page-scroll" href="gallerie.html" style="color: black;">Gallerie</a></li>
+                              <li class="nav-item"><a class="page-scroll" href="https://koarl.zapier.app" style="color: black;">ChatBot</a></li>
                           </ul>
                       </div>
                   </nav> <!-- navbar -->
@@ -97,35 +65,53 @@
   <!--====== NAVBAR TWO PART ENDS ======-->
 
 
-  <!-- ======= Gallerie ======= -->
-  <div id="gallery-container" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 10px;"></div>
-
-  <!-- ======= Gallerie ENDE ======= -->
-
-
-
-  <script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    const galleryContainer = document.getElementById('gallery-container');
-    const imageFolder = '/assets/images/gallerie/';
-
-    fetch('imageList.json')
-        .then(response => response.json())
-        .then(imageFiles => {
-            imageFiles.image.forEach(image => { // Zugriff auf das Array mit 'imageFiles.image'
-                const imgElement = document.createElement('img');
-                imgElement.src = imageFolder + image;
-                imgElement.style.width = '200px'; // Anpassung der Bildgröße
-                imgElement.style.height = '200px'; // Anpassung der Bildgröße
-                imgElement.style.objectFit = 'cover'; // Bild anpassen
-                galleryContainer.appendChild(imgElement);
-            });
-        })
-        .catch(error => console.error('Fehler beim Laden der Bilder:', error));
-});
-
-</script>
-
-
-</body>
-</html>
+   <!-- ======= Gallerie ======= -->
+   <div id="gallery-container" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; margin-top: 80px;"></div>
+   <!-- ======= Gallerie ENDE ======= -->
+ 
+   <!-- Modal für vergrößerte Bildansicht -->
+   <div id="imageModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center;">
+       <img id="modalImage" style="max-width:80%; max-height:80%;" />
+       <span id="closeModal" style="position:absolute; top:20px; right:40px; font-size:30px; font-weight:bold; color:white; cursor:pointer;">&times;</span>
+   </div>
+ 
+   <script>
+     document.addEventListener('DOMContentLoaded', (event) => {
+         const galleryContainer = document.getElementById('gallery-container');
+         const imageFolder = '/assets/images/gallerie/';
+ 
+         fetch('imageList.json')
+             .then(response => response.json())
+             .then(imageFiles => {
+                 imageFiles.images.forEach(image => {
+                     const imgElement = document.createElement('img');
+                     imgElement.src = imageFolder + image;
+                     imgElement.style.width = '200px';
+                     imgElement.style.height = '200px';
+                     imgElement.style.objectFit = 'cover';
+                     imgElement.style.cursor = 'pointer';
+                     imgElement.onclick = () => openModal(imageFolder + image);
+                     galleryContainer.appendChild(imgElement);
+                 });
+             })
+             .catch(error => console.error('Fehler beim Laden der Bilder:', error));
+     });
+ 
+     function openModal(imageSrc) {
+         const modal = document.getElementById('imageModal');
+         const modalImage = document.getElementById('modalImage');
+         modal.style.display = 'flex';
+         modalImage.src = imageSrc;
+         document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+     }
+ 
+     window.onclick = function(event) {
+         const modal = document.getElementById('imageModal');
+         if (event.target == modal) {
+             modal.style.display = 'none';
+         }
+     }
+   </script>
+ 
+ </body>
+ </html>
