@@ -44,7 +44,7 @@
 <body >
     <!--====== PRELOADER PART START ======-->
 
-    <!-- <div class="preloader">
+    <div class="preloader">
       <div class="loader">
           <div class="ytp-spinner">
               <div class="ytp-spinner-container">
@@ -59,7 +59,7 @@
               </div>
           </div>
       </div>
-  </div> -->
+  </div>
 
   <!--====== PRELOADER PART ENDS ======-->
   
@@ -105,24 +105,25 @@
 
 
   <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const galleryContainer = document.getElementById('gallery-container');
-        const imageFolder = '/assets/images/gallerie/';
+document.addEventListener('DOMContentLoaded', (event) => {
+    const galleryContainer = document.getElementById('gallery-container');
+    const imageFolder = '/assets/images/gallerie/';
 
-        fetch('imageList.json')
-            .then(response => response.json())
-            .then(imageFiles => {
-                imageFiles.forEach(image => {
-                    const imgElement = document.createElement('img');
-                    imgElement.src = imageFolder + image;
-                    imgElement.style.width = '100px'; // Anpassung der Bildgröße
-                    imgElement.style.height = '100px'; // Anpassung der Bildgröße
-                    imgElement.style.objectFit = 'cover'; // Bild anpassen
-                    galleryContainer.appendChild(imgElement);
-                });
-            })
-            .catch(error => console.error('Fehler beim Laden der Bilder:', error));
-    });
+    fetch('imageList.json')
+        .then(response => response.json())
+        .then(imageFiles => {
+            imageFiles.image.forEach(image => { // Zugriff auf das Array mit 'imageFiles.image'
+                const imgElement = document.createElement('img');
+                imgElement.src = imageFolder + image;
+                imgElement.style.width = '200px'; // Anpassung der Bildgröße
+                imgElement.style.height = '200px'; // Anpassung der Bildgröße
+                imgElement.style.objectFit = 'cover'; // Bild anpassen
+                galleryContainer.appendChild(imgElement);
+            });
+        })
+        .catch(error => console.error('Fehler beim Laden der Bilder:', error));
+});
+
 </script>
 
 
