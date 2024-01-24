@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     
     <!--====== Title ======-->
-    <title>Koarldüs - Bilder Gallerie</title>
+    <title>Koarldüs - Wetten</title>
     
     <meta name="description" content="Entdecken Sie den Koarl Chatbot – eine einzigartige Kombination aus fortschrittlicher KI-Technologie und der Persönlichkeit von Manuel Karl. Erleben Sie interaktive und persönliche Gespräche, die neue Maßstäbe in der digitalen Kommunikation setzen.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Koarldüs">
     <meta name="keywords" content="Koarl Chatbot, Manuel Karl, Künstliche Intelligenz, Chatbot-Technologie, digitale Assistenten, AI-Chatbot, persönlicher Chatbot, Manuel Karl Persönlichkeit, interaktiver Chatbot, intelligenter digitaler Begleiter, Chatbot-Kommunikation, kundenspezifischer Chatbot, Chatbot-Entwicklung, Chatbot-Design, innovative Chatbot-Lösungen, digitale Unterhaltung, digitale Beratung, benutzerfreundlicher Chatbot, fortschrittliche Chatbot-Features, AI-Technologie, Chatbot für soziale Interaktion, Chatbot-Plattform, Chatbot-Anwendungen, benutzerdefinierte Chatbot-Erlebnisse, Chatbot-Interaktion, natürliche Sprachverarbeitung, Chatbot für digitale Interaktion, Chatbot für persönliche Gespräche">
-    <meta property="og:title" content="Koarl Chatbot - Ihr digitaler Begleiter">
+    <meta property="og:title" content="Koarl Wetten">
     <meta property="og:description" content="Erleben Sie die einzigartige Persönlichkeit von Koarl in unserem innovativen Koarl Chatbot.">
     <meta property="og:image" content="assets/images/favicon.png">
     <meta property="og:url" content="https://koarldüs.com/gallerie">
@@ -28,15 +28,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
-        /* CSS in Ihrer style.css oder innerhalb eines <style>-Tags in gallerie.html */
-        @media screen and (max-width: 600px) {
-            #gallery-container img {
-                width: 100%;
-                height: auto;
-            }
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe{
+            margin-top: 90px;
         }
     </style>
-
 </head>
 
 <body >
@@ -62,8 +65,8 @@
                       <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
                           <ul class="navbar-nav m-auto">
                               <li class="nav-item"><a class="page-scroll" href="index.html" style="color: black;">Home</a></li>
-                              <li class="nav-item active"><a class="page-scroll" href="gallerie.html" style="color: black;">Gallerie</a></li>
-                              <li class="nav-item"><a class="page-scroll" href="wetten.html" style="color: black;">Wetten</a></li>
+                              <li class="nav-item"><a class="page-scroll" href="gallerie.html" style="color: black;">Gallerie</a></li>
+                              <li class="nav-item active"><a class="page-scroll" href="wetten.html" style="color: black;">Wetten</a></li>
                               <li class="nav-item"><a class="page-scroll" href="https://c.ai/c/QKIHIgghBVqMgVfIpS0RziXzKw0AaAgr-gM4sFnk3ME" style="color: black;">ChatBot</a></li>
                           </ul>
                       </div>
@@ -75,54 +78,9 @@
 
   <!--====== NAVBAR TWO PART ENDS ======-->
 
+    <!--====== iframe ======-->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQMHTBK3te31bR9DgW6adx-bDRR7WcSq83_FyHiAkTGvbAWw/viewform?embedded=true" width="640" height="1331" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>    <!--====== iframe ende ======-->
 
-    <!-- ======= Gallerie ======= -->
-    <div id="gallery-container" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; margin-top: 80px; justify-content: center;"></div>
-    <!-- ======= Gallerie ENDE ======= -->
 
-    <!-- Modal für vergrößerte Bildansicht -->
-   <div id="imageModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center;">
-       <img id="modalImage" style="max-width:80%; max-height:80%;" />
-       <span id="closeModal" style="position:absolute; top:20px; right:40px; font-size:30px; font-weight:bold; color:white; cursor:pointer;">&times;</span>
-   </div>
- 
-   <script>
-     document.addEventListener('DOMContentLoaded', (event) => {
-         const galleryContainer = document.getElementById('gallery-container');
-         const imageFolder = '/assets/images/gallerie/';
- 
-         fetch('imageList.json')
-             .then(response => response.json())
-             .then(imageFiles => {
-                 imageFiles.images.forEach(image => {
-                     const imgElement = document.createElement('img');
-                     imgElement.src = imageFolder + image;
-                     imgElement.style.width = '200px';
-                     imgElement.style.height = '200px';
-                     imgElement.style.objectFit = 'cover';
-                     imgElement.style.cursor = 'pointer';
-                     imgElement.onclick = () => openModal(imageFolder + image);
-                     galleryContainer.appendChild(imgElement);
-                 });
-             })
-             .catch(error => console.error('Fehler beim Laden der Bilder:', error));
-     });
- 
-     function openModal(imageSrc) {
-         const modal = document.getElementById('imageModal');
-         const modalImage = document.getElementById('modalImage');
-         modal.style.display = 'flex';
-         modalImage.src = imageSrc;
-         document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
-     }
- 
-     window.onclick = function(event) {
-         const modal = document.getElementById('imageModal');
-         if (event.target == modal) {
-             modal.style.display = 'none';
-         }
-     }
-   </script>
- 
  </body>
  </html>
