@@ -7,14 +7,14 @@
     <!--====== Title ======-->
     <title>Koarldüs - Wetten</title>
     
-    <meta name="description" content="Entdecken Sie den Koarl Chatbot – eine einzigartige Kombination aus fortschrittlicher KI-Technologie und der Persönlichkeit von Manuel Karl. Erleben Sie interaktive und persönliche Gespräche, die neue Maßstäbe in der digitalen Kommunikation setzen.">
+    <meta name="description" content="Entdecken Sie Koarldüs – die ultimative Wettenplattform für alle Fans von Koarl und Calvin. Treten Sie in spannenden Wettkämpfen bei, prognostizieren Sie die Ergebnisse und gewinnen Sie groß. Ihre Plattform für aufregende und interaktive Wetten!">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Koarldüs">
-    <meta name="keywords" content="Koarl Chatbot, Manuel Karl, Künstliche Intelligenz, Chatbot-Technologie, digitale Assistenten, AI-Chatbot, persönlicher Chatbot, Manuel Karl Persönlichkeit, interaktiver Chatbot, intelligenter digitaler Begleiter, Chatbot-Kommunikation, kundenspezifischer Chatbot, Chatbot-Entwicklung, Chatbot-Design, innovative Chatbot-Lösungen, digitale Unterhaltung, digitale Beratung, benutzerfreundlicher Chatbot, fortschrittliche Chatbot-Features, AI-Technologie, Chatbot für soziale Interaktion, Chatbot-Plattform, Chatbot-Anwendungen, benutzerdefinierte Chatbot-Erlebnisse, Chatbot-Interaktion, natürliche Sprachverarbeitung, Chatbot für digitale Interaktion, Chatbot für persönliche Gespräche">
+    <meta name="keywords" content="Koarldüs, Wetten, Koarl Wetten, Calvin Wetten, Online-Wetten, Wettkampf, Prognosen, Wettenplattform, interaktive Wetten, Gewinne, Unterhaltung">
     <meta property="og:title" content="Koarl Wetten">
-    <meta property="og:description" content="Erleben Sie die einzigartige Persönlichkeit von Koarl in unserem innovativen Koarl Chatbot.">
+    <meta property="og:description" content="Entdecken Sie Koarldüs – die ultimative Wettenplattform für alle Fans von Koarl und Calvin. Treten Sie in spannenden Wettkämpfen bei, prognostizieren Sie die Ergebnisse und gewinnen Sie groß. Ihre Plattform für aufregende und interaktive Wetten!">
     <meta property="og:image" content="assets/images/favicon.png">
-    <meta property="og:url" content="https://koarldüs.com/gallerie">
+    <meta property="og:url" content="https://koarldüs.com/wetten.html">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,14 +30,20 @@
     <style>
         body {
             height: 100%;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         iframe{
             margin-top: 90px;
+        }
+        .background {
+            background-image: url('assets/images/haltung.png'); /* Pfad zu Ihrem Hintergrundbild */
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: rgba(255, 255, 255, 0.5); /* Weißes Overlay mit Transparenz */
         }
     </style>
 </head>
@@ -79,8 +85,11 @@
   <!--====== NAVBAR TWO PART ENDS ======-->
 
     <!--====== iframe ======-->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQMHTBK3te31bR9DgW6adx-bDRR7WcSq83_FyHiAkTGvbAWw/viewform?embedded=true" width="640" height="1331" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>    <!--====== iframe ende ======-->
 
+    <div class="background">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQMHTBK3te31bR9DgW6adx-bDRR7WcSq83_FyHiAkTGvbAWw/viewform?embedded=true" width="640" height="1331" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>    <!--====== iframe ende ======-->
+    </div>
+    <!--====== iframe ende ======-->
 
  </body>
  </html>
